@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>My Now Amazing Webpage</title>
+    <link rel="stylesheet" type="text/css" href="slick1.css"/>
+    <link rel="stylesheet" type="text/css" href="slick-theme1.css"/>
+
+</head>
+<body>
+<div class="main">
+    <div class="sl">
+        <div class="sl__slide">
+            <img class="img__slide" src="photos/1.jpg" alt=""/>
+        </div>
+        <div class="sl__slide">
+            <img class="img__slide" src="photos/2.jpg" alt=""/>
+        </div>
+        <div class="sl__slide">
+            <img class="img__slide" src="photos/3.jpg" alt=""/>
+        </div>
+        <div class="sl__slide">
+            <img class="img__slide" src="photos/4.jpg" alt=""/>
+        </div>
+        <div class="sl__slide">
+            <img class="img__slide" src="photos/1.jpg" alt=""/>
+        </div>
+        <div class="sl__slide">
+            <img class="img__slide" src="photos/2.jpg" alt=""/>
+        </div>
+        <div class="sl__slide">
+            <img class="img__slide" src="photos/3.jpg" alt=""/>
+        </div>
+        <div class="sl__slide">
+            <img class="img__slide" src="photos/4.jpg" alt=""/>
+        </div>
+    </div>
+
+    <ul>
+        <li class="slick-dots"></li>
+    </ul>
+
+
+    <div class="sl2">
+        <div class="sl__slide">
+            <img class="img__slide" src="photos/1_sm.jpg" alt=""/>
+        </div>
+        <div class="sl__slide">
+            <img class="img__slide" src="photos/2_sm.jpg" alt=""/>
+        </div>
+        <div class="sl__slide">
+            <img class="img__slide" src="photos/3_sm.jpg" alt=""/>
+        </div>
+        <div class="sl__slide">
+            <img class="img__slide" src="photos/4_sm.jpg" alt=""/>
+        </div>
+        <div class="sl__slide">
+            <img class="img__slide" src="photos/1_sm.jpg" alt=""/>
+        </div>
+        <div class="sl__slide">
+            <img class="img__slide" src="photos/2_sm.jpg" alt=""/>
+        </div>
+        <div class="sl__slide">
+            <img class="img__slide" src="photos/3_sm.jpg" alt=""/>
+        </div>
+        <div class="sl__slide">
+            <img class="img__slide" src="photos/4_sm.jpg" alt=""/>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="jquery-3.4.1.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="slick/slick.min.js"></script>
+
+
+<script>
+    $('.sl').slick({
+        autoplay: true,
+        autoplaySpeed: 1500,
+        dots: true
+    });
+
+    $(".sl2").slick({
+        dots: true,
+        infinite: false,
+        speed: 300,
+        slidesToShow: 4,
+        slidesToScroll: 4,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    infinite: true,
+                    dots: true
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+            // You can unslick at a given breakpoint now by adding:
+            // settings: "unslick"
+            // instead of a settings object
+        ]
+    });
+
+</script>
+
+</body>
+</html>
+				

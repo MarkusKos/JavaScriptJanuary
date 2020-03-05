@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Методы Объектов</title>
+
+    <script>
+        let cat = {
+            name: "Барсик",
+            age: 2,
+            //функцию в объектах называют методами
+            meow: function () {
+                console.log("Мяяяяяу");
+            },
+            showInfo: function () {
+                //в функциях доступна служебная переменная this кот всегда ссылается на тот объект через кот был осуществлен вызов
+                console.log("Кличка: " + this.name + "возраст:" + this.age);
+            },
+        };
+
+        console.log(cat.name);
+        cat.meow();
+
+        let copy = cat.meow;
+        copy();
+
+        let cat2 = Object.create(cat);
+        cat2.name = "Мурка";
+        console.log(cat2.name, cat.name);
+        cat2.meow();
+
+
+        //здесь мы вызвали через объект, значит в
+        cat.showInfo();
+        cat2.showInfo();
+
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

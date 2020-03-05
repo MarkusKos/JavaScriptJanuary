@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Домашняя работа</title>
+
+    <script>
+        let tableHtml = "<table border ='1'><tr><th>Имя</th><th>Возраст</th></tr>";
+        let noAdult = confirm("Показывать несовершенно летних?");
+        let users = [
+            {name: "John Doe", age: 25},
+            {name: "Samantha Smith", age: 32},
+            {name: "Peter Black", age: 15},
+            {name: "Martha Green", age: 22},
+            {name: "Mary Zale", age: 12}
+        ];
+        for (let i = 0; i < users.length; i++) {
+            if (noAdult || users[i].age >= 18) {
+                tableHtml += "<tr>";
+                tableHtml += "<td>" + users[i].name + "</td>";
+                tableHtml += "<td>" + users[i].age + "</td>";
+                tableHtml += "</tr>";
+            }
+        }
+        tableHtml += "</table>";
+        document.write(tableHtml)
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

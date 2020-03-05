@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Объекты</title>
+    <script>
+        let user = {
+            name :"Джон Сноу",
+            age: 25,
+            isAlive: true,
+            phones: ["+79516833333", "4636455"],
+            adress:{
+                country:"Вестерос",
+                city:"Винтерфелл",
+                zip:2828282,
+            },
+        };
+
+        console.log(user.name);
+        if(user.isAlive){
+            console.log("Живой");
+        }
+
+        console.log(user.adress.city);
+        console.log(user);
+
+        //кол-во итераций зависит от кол-ва свойств в объекте
+        //в переменной prop будут хранится ИМЕНА свойств
+
+        for(let prop in user) {
+            console.log(prop);
+        }
+
+    </script>
+
+
+</head>
+<body>
+
+</body>
+</html>

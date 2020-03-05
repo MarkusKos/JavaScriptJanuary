@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Самостоятельная работа</title>
+    <script>
+        let students = [
+            {name: "Иван", age: 17,sex:"М"},
+            {name: "Светлана", age: 18,sex:"F"},
+            {name: "Мария", age: 17,sex:"F"},
+            {name: "Сергей", age: 16,sex:"М"},
+        ];
+
+        let tableHtml = "<table border='1'><tr><th>Имя</th><th>Возраст</th><th>Пол</th></tr>";
+        for (let i = 0; i < students.length; i++) {
+
+                if (sex=="M")
+                tableHtml += "<tr>";
+                    tableHtml += "<td>" + students[i].name + "</td>";
+                    tableHtml += "<td>" + students[i].age + "</td>";
+                    tableHtml += "<td>" + students[i].sex + "</td>";
+                tableHtml += "</tr>";
+
+        }
+        tableHtml += "</table>";
+
+        document.write(tableHtml);
+
+        let age1 = 0;
+
+        for (let i = 0; i < students.age.length; i++){
+            age1= age
+        }
+
+        document.write(age1)
+
+
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

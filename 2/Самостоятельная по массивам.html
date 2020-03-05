@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Самостоятельная по массивам</title>
+
+    <script>
+        let arr = [6,5,9,10,22,55,26,555,9,-7,18,154,239,9];
+        let sum = 0;
+        let i = 0;
+
+        // for(let i = 0; i<arr.length; i++ ) {
+        //     if(arr[i] %2 === 1 && arr[i]<=11){
+        //         sum += arr[i];
+        //     }
+        // }
+        // document.write(" Нечетное числа " + sum)
+
+        while (i<arr.length){
+            if(arr[i]%2 ===1 && arr[i]<=11){
+                sum = sum + arr[i];
+            }
+            i++;
+        }
+        document.write("Нечетные числа " + sum)
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

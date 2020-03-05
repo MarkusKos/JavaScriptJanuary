@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Чекбоксы и радиокнопки</title>
+    <style>
+        .night-mode {
+            color: #f1f1f1;
+            background: #222;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            let nightModeCheckbox = document.querySelector("#enableNightMode");
+            nightModeCheckbox.onchange = function () {
+                if (this.checked) {
+                    document.body.classList.add("night-mode");
+
+                } else {
+                    document.body.classList.remove("night-mode");
+                }
+            };
+            let radioButtons = document.querySelectorAll("[name='fontSize']");
+            for(let i=0; i<radioButtons.length; i++){
+                radioButtons[i].onchange = function () {
+                   document.body.style.fontSize = this.value;
+                };
+            }
+        };
+    </script>
+</head>
+<body>
+<h1>Тут должно быть много текста</h1>
+<p> Но нам лень его писать</p>
+<input type="checkbox" id="enableNightMode">
+<lable for="enableNightMode">Включить ночную тему</lable>
+<hr>
+
+    Выбирите размер шрифта:
+
+    <input name="fontSize" type="radio" id="radio-1" value="16px">
+    <lable for="radio-1">Подпись</lable>
+
+    <input name="fontSize" type="radio" id="radio-2" value="18px">
+    <lable for="radio-2">Подпись</lable>
+
+    <input name="fontSize" type="radio" id="radio-3" value="22px">
+    <lable for="radio-3">Подпись</lable>
+</body>
+</html>

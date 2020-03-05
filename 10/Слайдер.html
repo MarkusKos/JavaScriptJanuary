@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Слайдер</title>
+    <style>
+        .slider {
+            border: 2px solid;
+            width: 600px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slider ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            width: 100%;
+            transition: 0.8s;
+        }
+
+        .slider li {
+            padding: 80px 70px;
+            font-size: 48px;
+            text-align: center;
+            flex-shrink: 0;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .slider-next, .slider-prev {
+            width: 50px;
+            position: absolute;
+            top: 0;
+            height: 100%;
+        }
+
+        .slider-next {
+            right: 0;
+        }
+
+        .slider-prev {
+            left: 0;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const prevBtn = document.querySelector(".slider-prev");
+            const nextBtn = document.querySelector(".slider-next");
+            const list = document.querySelector(".slider ul");
+            const slides = document.querySelectorAll(".slider li");
+
+            const showSlide = function (offset) {
+                if (offset < 0 && current === 0) return;
+                if (offset > 0 && current === slides.length - 1) return;
+
+                current += offset;
+                list.style.marginLeft = (-current * list.clientWidth) + "px";
+                /* if (current === slides.length - 1) {
+                     nextBtn.disabled = true;
+                 } else {
+                     nextBtn.disabled = false;
+                 }*/
+                nextBtn.disabled = current === slides.length - 1;
+                prevBtn.disabled = current === 0;
+            };
+
+            let current = 0;
+            nextBtn.addEventListener("click", function () {
+                showSlide(1);
+            });
+
+            prevBtn.addEventListener("click", function () {
+                showSlide(-1);
+            });
+
+            showSlide(0);
+            document.addEventListener("keydown", function (event) {
+                if (event.key === "ArrowRight") {
+                    showSlide(1);
+                }
+                if (event.key === "ArrowLeft") {
+                    showSlide(-1);
+                }
+            });
+
+        });
+    </script>
+</head>
+<body>
+<div class="slider">
+    <button class="slider-prev">&lt;</button>
+    <ul>
+        <li>Это какой-то контент</li>
+        <li>Здесь второй</li>
+        <li>Это третий</li>
+    </ul>
+    <button class="slider-next">&gt;</button>
+</div>
+
+
+</body>
+</html>

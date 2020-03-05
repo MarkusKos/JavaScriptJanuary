@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Курс доллара</title>
+    <script>
+
+        let rate = prompt("Введите курс доллора");
+
+        document.write("<table border = '1'><tr><th>Доллар</th><th>Стоимость</th><th>Конфеты(КГ)</th></tr>");
+
+        for (let i = 0; i <= 30; i++) {
+            let price = rate * i;
+            let candy = price / 280;
+            document.write("<tr><td>" + i + "$</td><td>" + price.toFixed(1) + "руб</td><td>" + candy.toFixed(2) + "</td></tr>");
+            document.write("</table>");
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Arrays</title>
+    <script>
+        let students = ["Сергей","Константин","Валерий","Алексей","Дмитрий","Александр","Андрей"];
+
+       // console.log(students);
+       //  ввывод в виде таблице
+       // console.table(students);
+
+        //students.sort();
+        //console.table(students);
+
+        //students.reverse();
+        //console.table(students);
+
+        let day = prompt("введите день");
+        let month= prompt("введите месяц");
+        let year = prompt("введите год");
+
+        let daysInMonth = [31,28,31,30,31,30,31,31,30,31,30,31];
+
+        let daysCount = daysInMonth[month-1];
+
+        if(daysCount !== undefined day > 0 && day <= daysCount ){
+            alert("Дата корректна");
+        }else {
+            alert("Ошибка в дате");
+        }
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

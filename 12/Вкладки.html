@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Вкладки на вью</title>
+</head>
+<body>
+<div id="tabs">
+    <button @click = "setTab('description')">Описание</button>
+    <button @click = "setTab('params')"> характеристики</button>
+    <button @click = "setTab('reviews')">Отзывы</button>
+    <hr>
+    <div v-if = "isTab('description')">
+        <h2>Описание товара</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab blanditiis consectetur consequatur deserunt,
+            dolore dolorum est ex hic impedit in magnam minima optio pariatur placeat provident rem rerum similique
+            temporibus.</p>
+    </div>
+    <div v-if = "isTab('params')">
+        <h2>Характеристика товара</h2>
+        <p>2 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab blanditiis consectetur consequatur deserunt,
+            dolore dolorum est ex hic impedit in magnam minima optio pariatur placeat provident rem rerum similique
+            temporibus.</p>
+    </div>
+    <div v-if = "isTab('reviews')">
+        <h2>ОТзывыв о товаре</h2>
+        <p> 3Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab blanditiis consectetur consequatur deserunt,
+            dolore
+            dolorum est ex hic impedit in magnam minima optio pariatur placeat provident rem rerum similique
+            temporibus.</p>
+    </div>
+
+</div>
+
+<!-- версия для разработки, отображает полезные предупреждения в консоли -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        new Vue({
+            el: "#tabs",
+            data: {
+                tab: "description"
+            },
+            methods:{
+                isTab: function (name) {
+                    return this.tab === name;
+                },
+                setTab: function (name) {
+                    if(this.isTab(name)){
+                        this.tab = "";
+                    }else {
+                        this.tab = name;
+                    }
+                },
+            },
+        });
+    });
+</script>
+
+</body>
+</html>

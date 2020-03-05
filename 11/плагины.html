@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Подключение плагинов</title>
+    <link rel="stylesheet" href="FancyBox/jquery.fancybox.css">
+</head>
+<body>
+
+<a class="image-link" data-fancybox href="Photo/photos/1.jpg">
+    <img src="Photo/photos/1_sm.jpg" alt="">
+</a>
+<a class="image-link" href="Photo/photos/2.jpg">
+    <img src="Photo/photos/2_sm.jpg" alt="">
+</a>
+
+<script src="jquery-3.4.1.min.js"></script>
+<script src="FancyBox/jquery.fancybox.pack.js"></script>
+
+<script>
+    $(function () {
+        $(".image-link").fancybox({
+            maxWidth: 450,
+            openEffect: "elastic",
+            closeEffect: "elastic",
+        });
+    });
+    
+</script>
+</body>
+</html>

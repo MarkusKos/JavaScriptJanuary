@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>dzCalculate</title>
+    <script>
+        window.onload = function () {
+            let numberA = document.querySelector("#numberA");
+            let numberB = document.querySelector("#numberB");
+            let result = document.querySelector("#result");
+            let plusBtn = document.querySelector("#plus");
+            let minusBtn = document.querySelector("#minus");
+            let multiplyBtn = document.querySelector("#multiply");
+            let divideBtn = document.querySelector("#divide");
+            /*
+            let plusBtn = document.querySelector("#plus");
+            plusBtn.onclick = function () {
+                result.innerHTML = ("Результат сложения " + numberA.value * 1 + '+' + numberB.value * 1 + "= " + (numberA.value * 1 + numberB.value * 1));
+            };
+
+            let minusBtn = document.querySelector("#minus");
+            minusBtn.onclick = function () {
+                result.innerHTML = ("Результат вычитания " + numberA.value + "-" + numberB.value + "= " + (numberA.value - numberB.value));
+            };
+
+            let multiplyBtn = document.querySelector("#multiply");
+            multiplyBtn.onclick = function () {
+                result.innerHTML = ("Результат умножения " + numberA.value + "*" + numberB.value + "= " + (numberA.value * numberB.value));
+            };
+
+            let divideBtn = document.querySelector("#divide");
+            divideBtn.onclick = function () {
+                result.innerHTML = ("Результат деления " + numberA.value + "/" + numberB.value + "=" + (numberA.value / numberB.value));
+            };*/
+
+            let clickHandler = function () {
+                let sign = this.innerHTML;
+
+                if (sign === "+") {
+                    result.innerHTML =  numberA.value * 1 + numberB.value * 1
+                } else if (sign === "-") {
+                    result.innerHTML =   numberA.value - numberB.value
+                } else if (sign === "*") {
+                    result.innerHTML =   numberA.value * numberB.value
+                } else if (sign === "/") {
+                    result.innerHTML = numberA.value / numberB.value
+                }
+            };
+            plusBtn.onclick = clickHandler;
+            multiplyBtn.onclick = clickHandler;
+            minusBtn.onclick = clickHandler;
+            divideBtn.onclick = clickHandler;
+        }
+      /*  let buttons = document.querySelectorAll("buttons");
+        for( let){
+            buttons[i].onclick = function () {
+
+            }
+        }*/
+    </script>
+</head>
+
+<body>
+А<input type=number id="numberA" value="Число">
+Б<input type=number id="numberB" value="Число">
+
+<button id="plus">+</button>
+<button id="minus">-</button>
+<button id="multiply">*</button>
+<button id="divide">/</button>
+
+<p id="result"></p>
+
+
+</body>
+</html>

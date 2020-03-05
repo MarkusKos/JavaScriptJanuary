@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>ДЗ на айпи</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        "use strict";
+        document.addEventListener("DOMContentLoaded", () => {
+            const load = document.querySelector("#load");
+            const myIp = document.querySelector("#myIp");
+
+            load.addEventListener("click", () => {
+                axios.get("https://api.ipify.org?format=json")
+                    .then(response => {
+                        myIp.innerHTML = `Мой IP ${response.data.ip} !`;
+                    });
+            });
+        });
+    </script>
+</head>
+<body>
+<button id="load">Мой IP</button>
+<div id="myIp"></div>
+</body>
+</html>

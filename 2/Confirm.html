@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Confirm</title>
+    <script>
+        // confirm вернет true или false
+        let bool = confirm("Подвердите удаление ");
+
+        alert(bool);
+
+        let isAdult = confirm("Подтвердите что вам больше 18");
+        if(isAdult){
+            alert("Добро пожаловать!");
+        } else {
+            alert("Давай досвиданя");
+            //перенаправление на другой сайт
+            window.location = "https://learn.javascript.ru/logical-ops"
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

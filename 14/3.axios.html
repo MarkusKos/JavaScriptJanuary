@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Axios</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        "use strict";
+        document.addEventListener("DOMContentLoaded", () => {
+            const load = document.querySelector("#load");
+            const result = document.querySelector("#result");
+
+            load.addEventListener("click", () => {
+             axios.get("https://www.cbr-xml-daily.ru/daily_json.js")
+                .then(response => {
+
+                    result.innerHTML = `Курс доллара ${response.data.Valute.USD.Value}руб.`;
+                });
+             console.log("1")
+            });
+        });
+    </script>
+</head>
+<body>
+<button id="load">Загрузить</button>
+<div id="result"></div>
+</body>
+</html>

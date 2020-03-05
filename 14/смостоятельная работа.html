@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>СР</title>
+</head>
+<body>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+    "use strict";
+    document.addEventListener("DOMContentLoaded", () => {
+        const load = document.querySelector("#load");
+        const name = document.querySelector("#name");
+        const email = document.querySelector("#email");
+
+        load.addEventListener("click", () => {
+            axios.get("https://randomuser.me/api/")
+                .then(response => {
+                    name.innerHTML = `${response.data.results[0].name.title}`;
+                    email.innerHTML = `${response.data.results[0].email}`;
+                });
+        });
+    });
+</script>
+<button id="load">Загрузить</button>
+<div id="name"></div>
+<hr>
+<div id="email"></div>
+</body>
+</html>
+
+https://randomuser.me/api/

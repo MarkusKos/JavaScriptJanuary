@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Форма с пользователями</title>
+    <style>
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        table {
+            border: 1px solid #333;
+            border-collapse: collapse;
+            display: none;
+        }
+
+        th, td {
+            padding: 15px;
+            border: 1px solid #333;
+        }
+
+        caption {
+            font-weight: bold;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            let nameInput = document.querySelector("#name");
+            let ageInput = document.querySelector("#age");
+            let nationalityInput = document.querySelector("#nationality");
+            let firstNationalityOption = nationalityInput.querySelector("option");
+            let sexOptionMale = document.querySelector("#sex-m");
+            let sexOptionFemale = document.querySelector("#sex-f");
+            let addButton = document.querySelector("#addUser");
+            let usersTable = document.querySelector("#usersTable");
+
+            addButton.onclick = function () {
+                if(!nameInput.value){
+                    alert("Введите имя");
+                    nameInput.style.border = "2px solid red";
+                    return false;
+                }
+                if(!ageInput.value){
+                    alert("Введите возраст!");
+                    ageInput.style.border = "2px solid red";
+                    return false;
+                }
+                if (!nationalityInput.value){
+                    alert("Введите национальность!");
+                    nationalityInput.style.color = "red";
+                    return false;
+                }else {
+                    nationalityInput.style.color = "";
+                }
+
+                if (sexOptionMale.checked === false && sexOptionFemale === false){
+                    alert("Выберите пол");
+                    return false;
+                }
+
+
+                let html = "<tr>";
+                html += "<td>" + nameInput.value + "</td>";
+                html += "<td>" + ageInput.value + "</td>";
+                if (sexOptionFemale.checked) {
+                    html += "<td>Женский</td>";
+                }
+                if (sexOptionMale.checked) {
+                    html += "<td>Мужской</td>";
+                }
+                html += "<td>" + nationalityInput.value + "</td>";
+                html += "</tr>";
+                usersTable.innerHTML += html;
+                usersTable.style.display = "table";
+
+
+                nameInput.value = "";
+                ageInput.value = "";
+                sexOptionMale.checked = false;
+                sexOptionFemale.checked = false;
+                firstNationalityOption.selected = true;
+
+            };
+        };
+    </script>
+</head>
+<body>
+<h1>Добавление пользователя</h1>
+<div class="form-group">
+    <label>
+        Имя <br>
+        <input id="name" type="text">
+    </label>
+</div>
+<div class="form-group">
+    <label>
+        Возраст <br>
+        <input id="age" type="text">
+    </label>
+</div>
+<div class="form-group">
+    Пол <br>
+    <label>
+        <input name="sex"  id="sex-m" type="radio"> Мужской
+    </label>
+    <label>
+        <input name="sex"  id="sex-f" type="radio"> Женский
+    </label>
+</div>
+<div class="form-group">
+    Гражданство <br>
+    <label>
+        <select id="nationality">
+            <option value=""> - не выбрано -</option>
+            <option value="Россия">Россия</option>
+            <option value="СНГ">СНГ (Кроме РФ)</option>
+            <option value="Евросоюз">Евросоюз</option>
+            <option value="Другие страны">Другие страны</option>
+        </select>
+    </label>
+</div>
+<button id="addUser">Добавить</button>
+
+<hr>
+
+<table id="usersTable">
+    <caption>Список пользователей</caption>
+    <tr>
+        <th>Имя</th>
+        <th>Возраст</th>
+        <th>Пол</th>
+        <th>Гражданство</th>
+    </tr>
+</table>
+
+
+</body>
+</html>

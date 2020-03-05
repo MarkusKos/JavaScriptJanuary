@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Функции</title>
+    <script>
+        let displayGreeting = function () {
+            document.write("Hello World");
+        };
+        //вызов функции
+        displayGreeting();
+
+        console.log(displayGreeting());
+        console.log(displayGreeting);
+
+        console.log(displayGreeting.name);
+
+        //Аргументы функции
+
+        let add = function (a, b) {
+            console.log(a+b);
+            //Функции доступна служебная переменная arguments, в которой хранится список всех переданных пр вызову значений(это
+            console.log(arguments[2]);
+
+        };
+
+        //При вызове функции можно перердать любое кол-во значений
+        //
+        add(5,10,9);
+        add();
+
+        //в ДЖС возможны функции с переменным(те любым) кол-ом аргументов
+        let maximum = Math.max(5,6,9,90,1,56,589,510);
+        console.log(maximum);
+
+        //нет переменной
+        let addAll = function () {
+            let total = 0;
+            for (let i=0; i<arguments.length;i++){
+                total += arguments[i]
+            }
+
+            console.log(total);
+        };
+
+        addAll(3,4,1,0,10,30);
+
+        let min = function (a,b) {
+            if(a<b){
+                return a ;
+            } else {
+                return b;
+            }
+        };
+
+        let max = function (a,b) {
+            if(a>b){
+                return a ;
+            } else {
+                return b;
+            }
+        };
+
+        let a = sum(9,8);
+        let b = sum(5,3);
+
+        //Функция расчета факториала
+
+        let factorial = function (n) {
+            let f= 1;
+
+            for (let i=2; i<=n; i++){
+                f*= i;
+            }
+            return f;
+        };
+        if (factorial(5)===120){
+            console.log("OK");
+        }
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

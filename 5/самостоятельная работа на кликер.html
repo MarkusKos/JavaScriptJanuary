@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>СР</title>
+    <script>
+        window.onload = function () {
+            let firstBtn = document.querySelector("#first");
+            let click = 0;
+
+            firstBtn.onclick = function () {
+                click++;
+                firstBtn.innerHTML = "Кол-во кликов" + click;
+            };
+
+        };
+    </script>
+</head>
+<body>
+    <button id="first">Кол-во кликов: </button>
+
+</body>
+</html>
+

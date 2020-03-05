@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Массивы объектов</title>
+
+    <script>
+        let students = [
+            {name: "Иван", age: 17},
+            {name: "Светлана", age: 18},
+            {name: "Мария", age: 17},
+            {name: "Сергей", age: 16},
+        ];
+
+        console.log(students[2].age);
+
+        document.write("<ul>");
+        for (let i = 0; i < students.length; i++) {
+            document.write("<li>Имя: " + students[i].name + ", возраст:" + students[i].age + "</li>");
+        }
+        document.write("</ul>");
+
+        //Формируем разметку, сохраняя её в переменную
+
+        let html = "<ul>";
+        for (let i = 0; i < students.length; i++) {
+            html = html + "<li>Имя: " + students[i].name + ", возраст:" + students[i].age + "</li>";
+        }
+        html = html + "</ul>"
+
+        document.write(html)
+
+        let age = prompt("введите возраст ")*1
+
+        let tableHtml = "<table border='1'><tr><th>Имя</th><th>Возраст</th></tr>";
+        for (let i = 0; i < students.length; i++) {
+            if (age === students[i].age || age === 0) {
+
+                tableHtml += "<tr>";
+                tableHtml += "<td>" + students[i].name + "</td>";
+                tableHtml += "<td>" + students[i].age + "</td>";
+                tableHtml += "</tr>";
+            }
+        }
+        tableHtml += "</table>";
+
+        document.write(tableHtml);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

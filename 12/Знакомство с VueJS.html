@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello world</title>
+</head>
+<body>
+<div id="app">
+    <h1>{{title}}</h1>
+    Счетчик: {{ counter }}
+</div>
+
+<!-- версия для разработки, отображает полезные предупреждения в консоли -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const app = new Vue({
+            el: "#app",
+            data: {
+                title: "Hello World",
+                counter: 0,
+            },
+        });
+
+        setInterval(function () {
+            app.counter++;
+            if (app.counter > 10) {
+                app.title = " Много Насчитали";
+            }
+            if(app.counter > 20){
+                app.title = "Ну сколько можно((";
+            }
+        }, 200)
+    });
+</script>
+
+</body>
+</html>

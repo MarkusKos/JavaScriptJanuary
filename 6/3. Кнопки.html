@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		window.onload = function() {
+			// все кнопки
+			let buttons = document.querySelectorAll("button");
+			console.log(buttons);
+			buttons[2].style.fontWeight = "bold";
+
+			let clickHandler = function() {
+				this.style.color = "red";
+			};
+
+			for (let i=0; i<buttons.length; i++) {
+				// alert(buttons[i].innerHTML);
+				// функция одна, но ссылку на неё мы прописали для разных объектов
+				buttons[i].onclick = clickHandler;
+			}
+		};
+	</script>
+</head>
+<body>
+<button>Кнопка 1</button>
+<button>А это кнопка 2</button>
+<button>3</button>
+<button>И здесь есть номер 4</button>
+<button>5</button>
+</body>
+</html>

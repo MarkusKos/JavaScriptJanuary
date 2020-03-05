@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <h1>Сосчитать</h1>
+
+    <input v-model.number="b" type="number" placeholder="Число">
+    <select v-model="tax">
+        <option value="">- не выбрано -</option>
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+    </select>
+
+
+    <input v-model.number="a" type="number" placeholder="Число">
+
+    <div id="result">
+        Результат {{result}}
+    </div>
+</div>
+<!-- версия для разработки, отображает полезные предупреждения в консоли -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        new Vue({
+            el: "#app",
+            data: {
+                a: 0,
+                b: 0,
+                tax:"0",
+            },
+            computed: {
+                result: function() {
+                    if (this.tax === "+") {
+                        return this.a + this.b;
+                    }
+                    if (this.tax === "-") {
+                        return this.a - this.b;
+                    }
+                    if (this.tax === "*") {
+                        return this.a * this.b;
+                    }
+                    if (this.tax === "/") {
+                        return this.a / this.b;
+                    }
+                },
+            },
+        })
+    });
+</script>
+
+</body>
+</html>

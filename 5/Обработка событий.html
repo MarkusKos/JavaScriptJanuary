@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Обработка событий</title>
+    <script>
+        window.onload= function () {
+            let firstBtn = document.querySelector("#first");
+            let secondBtn = document.querySelector("#second");
+
+            firstBtn.onclick = function () {
+                alert(firstBtn.innerHTML)
+            };
+
+                secondBtn.onclick = function () {
+                alert(this.innerHTML)
+            };
+                secondBtn.onclick = firstBtn.onclick;
+        };
+    </script>
+</head>
+<body>
+<button id="first">Первая кнопка</button>
+<button id="second">Другая кнопка</button>
+
+</body>
+</html>

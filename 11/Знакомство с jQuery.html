@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery</title>
+</head>
+<body>
+
+<button>Кнопка</button>
+<button>Кнопка</button>
+<button>Кнопка</button>
+<div id="block"></div>
+
+<script src="jquery-3.4.1.min.js"></script>
+<script>
+    $( function () {
+        const button = $("button");
+        button.text("Hello jQuery");
+        button.css("color","red");
+       /* button.css({
+            color:"red",
+            background:"yellow"
+        });*/
+
+       button.click(function () {
+            alert("test");
+            //при вызови функции jquery можно передать уже найденный дом элемент
+           //тогда функция вернет новую коллекцию с одним элементо
+           //скачать пояснение с гита
+            $(this).css("color", "blue")
+       });
+
+       $("#block")
+           .text("Hello World")
+           .css("opacity", "0.1")
+           .animate({opacity:1}, 900);
+    });
+</script>
+</body>
+</html>
