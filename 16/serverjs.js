@@ -1,9 +1,12 @@
 "use strict";
 const express = require("express");
 const faker = require("faker");
+const cors = require("cors");
 //faker.locale = "ru";
 
 const app = express();
+
+app.use(cors());
 
 app.get("/",(req,res) =>{
     console.log("Пришел запрос на сервер!");
