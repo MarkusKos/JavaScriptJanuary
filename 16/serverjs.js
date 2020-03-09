@@ -1,5 +1,7 @@
 "use strict";
 const express = require("express");
+const faker = require("faker");
+//faker.locale = "ru";
 
 const app = express();
 
@@ -8,6 +10,19 @@ app.get("/",(req,res) =>{
     console.log(new Date());
 
     res.send("Hello world");
+});
+
+app.get("/random", (req,res) =>{
+    const data = {
+      user:{
+          firstName: faker.name.firstName("f"),
+          lastName: faker.name.lastName("f"),
+          email: faker.internet.email(),
+      },
+      company: faker.company.companyName()
+    };
+    //res.send(JSON.stringify(data));
+    res.json(data);
 });
 
 app.listen(3000,err =>{
